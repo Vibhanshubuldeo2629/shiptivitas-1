@@ -23,3 +23,10 @@
 .Card-title {
   font-weight: bold;
 }
+
+.Card-drag-handle {
+  cursor: grab;
+  display: inline-block;
+  margin-right: 8px;
+}
+

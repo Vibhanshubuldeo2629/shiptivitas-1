@@ -1,3 +1,31 @@
 .Board {
-  margin-top: 12px;
+  margin-top: 20px;
+}
+
+.Swimlane {
+  margin-bottom: 20px;
+}
+
+.Card {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.Card-title {
+  display: flex;
+  align-items: center;
+}
+
+.Card-grey {
+  background-color: #f8f9fa;
+}
+
+.Card-blue {
+  background-color: #e2e6ea;
+}
+
+.Card-green {
+  background-color: #c3e6cb;
 }

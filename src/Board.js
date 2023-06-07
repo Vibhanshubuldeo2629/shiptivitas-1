@@ -21,7 +21,24 @@ export default class Board extends React.Component {
       complete: React.createRef(),
     }
   }
+
+  componentDidMount() {
+    this.initializeDragula();
+  }
+
+  initializeDragula() {
+    const options = {
+      moves: (el, source, handle, sibling) => !el.classList.contains('Card-title'), // Allow dragging only when clicking outside Card title
+    };
+    Dragula([
+      this.swimlanes.backlog.current,
+      this.swimlanes.inProgress.current,
+      this.swimlanes.complete.current,
+    ], options);
+  }
+
   getClients() {
+    // client data goes here
     return [
       ['1','Stark, White and Abbott','Cloned Optimal Architecture', 'in-progress'],
       ['2','Wiza LLC','Exclusive Bandwidth-Monitored Implementation', 'complete'],
@@ -50,9 +67,10 @@ export default class Board extends React.Component {
       status: companyDetails[3],
     }));
   }
+
   renderSwimlane(name, clients, ref) {
     return (
-      <Swimlane name={name} clients={clients} dragulaRef={ref}/>
+      <Swimlane name={name} clients={clients} dragulaRef={ref} />
     );
   }
 
@@ -76,3 +94,4 @@ export default class Board extends React.Component {
     );
   }
 }
+
